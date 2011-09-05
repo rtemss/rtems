@@ -1,0 +1,71 @@
+## Process this file with autoconf to produce a configure script.
+##
+## $Id: configure.ac,v 1.18 2011/06/07 13:34:30 sh Exp $
+
+AC_PREREQ([2.68])
+AC_INIT([rtems-c-src-lib-libbsp-powerpc-gen83xx],[_RTEMS_VERSION],[http://www.rtems.org/bugzilla])
+AC_CONFIG_SRCDIR([bsp_specs])
+RTEMS_TOP(../../../../../..)
+
+RTEMS_CANONICAL_TARGET_CPU
+AM_INIT_AUTOMAKE([no-define nostdinc foreign 1.11.1])
+RTEMS_BSP_CONFIGURE
+
+RTEMS_PROG_CC_FOR_TARGET
+RTEMS_CANONICALIZE_TOOLS
+RTEMS_PROG_CCAS
+
+RTEMS_BSPOPTS_SET_DATA_CACHE_ENABLED([*],[1])
+RTEMS_BSPOPTS_HELP_DATA_CACHE_ENABLED
+
+RTEMS_BSPOPTS_SET_INSTRUCTION_CACHE_ENABLED([*],[1])
+RTEMS_BSPOPTS_HELP_INSTRUCTION_CACHE_ENABLED
+
+RTEMS_BSPOPTS_SET([MPC8313ERDB],[mpc8313erdb],[1])
+RTEMS_BSPOPTS_HELP([MPC8313ERDB],
+[If defined, use custom settings for the mpc8313erdb BSP.])
+
+RTEMS_BSPOPTS_SET([MPC8349EAMDS],[mpc8349eamds],[1])
+RTEMS_BSPOPTS_HELP([MPC8349EAMDS],
+[If defined, use custom settings for the mpc8349eamds BSP.])
+
+RTEMS_BSPOPTS_SET([HSC_CM01],[hsc_cm01],[1])
+RTEMS_BSPOPTS_HELP([HSC_CM01],
+[If defined, use custom settings for the hsc_cm01 BSP.])
+
+RTEMS_BSPOPTS_SET([MPC8349],[mpc8313erdb],[1])
+RTEMS_BSPOPTS_SET([MPC8349],[mpc8349eamds],[1])
+RTEMS_BSPOPTS_SET([MPC8349],[hsc_cm01],[1])
+RTEMS_BSPOPTS_HELP([MPC8349],
+[If defined, use custom settings for the MPC8349 libcpu family.])
+
+RTEMS_BSPOPTS_SET([BSP_CONSOLE_BAUD],[mpc8313erdb],[115200])
+RTEMS_BSPOPTS_SET([BSP_CONSOLE_BAUD],[*],[9600])
+RTEMS_BSPOPTS_HELP([BSP_CONSOLE_BAUD],[Default baud for console and other serial devices.])
+
+RTEMS_BSPOPTS_SET([BSP_USE_UART_INTERRUPTS],[mpc8313erdb],[1])
+RTEMS_BSPOPTS_HELP([BSP_USE_UART_INTERRUPTS],[enable usage of interrupts for the UART modules])
+
+RTEMS_BSPOPTS_SET([BSP_USE_UART2],[mpc8313erdb],[1])
+RTEMS_BSPOPTS_SET([BSP_USE_UART2],[mpc8349eamds],[1])
+RTEMS_BSPOPTS_SET([BSP_USE_UART2],[hsc_cm01],[1])
+RTEMS_BSPOPTS_HELP([BSP_USE_UART2],[If defined, enables UART2.])
+
+RTEMS_BSPOPTS_SET([HAS_UBOOT],[mpc8313erdb],[1])
+RTEMS_BSPOPTS_HELP([HAS_UBOOT],[If defined, enables U-Boot support.])
+
+RTEMS_BSPOPTS_SET([GEN83XX_ENABLE_INTERRUPT_NESTING],[*],[1])
+RTEMS_BSPOPTS_HELP([GEN83XX_ENABLE_INTERRUPT_NESTING],[enable interrupt nesting])
+
+RTEMS_CHECK_NETWORKING
+AM_CONDITIONAL(HAS_NETWORKING,test "$HAS_NETWORKING" = "yes")
+
+# Explicitly list all Makefiles here
+AC_CONFIG_FILES([Makefile])
+
+RTEMS_BSP_BOOTCARD_OPTIONS
+RTEMS_BSP_CLEANUP_OPTIONS(0, 0)
+
+RTEMS_PPC_EXCEPTIONS
+
+AC_OUTPUT

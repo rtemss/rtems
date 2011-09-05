@@ -1,0 +1,16 @@
+#
+#  $Id: TEST.doc,v 1.1 2011/06/23 16:51:16 Ricardo Aguirre Exp $
+#
+#  COPYRIGHT (c) 1989-2011.
+#  On-Line Applications Research Corporation (OAR).
+#
+#  The license and distribution terms for this file may be
+#  found in the file LICENSE in this distribution or at
+#  http://www.rtems.com/license/LICENSE.
+#
+
+This test benchmarks the following operations:
+
++ Benchmark a call to nanosleep() which yields
+
+

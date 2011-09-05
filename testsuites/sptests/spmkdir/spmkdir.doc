@@ -1,0 +1,9 @@
+##
+## $Id: spmkdir.doc,v 1.5 2010/06/10 12:04:54 sh Exp $
+##
+
+This file describes the directives and concepts tested by this test set.
+
+test set name: spmkdir
+
+directives: rtems_mkdir

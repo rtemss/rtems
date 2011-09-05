@@ -1,0 +1,24 @@
+#
+#  $Id: spsimplesched02.doc,v 1.1 2011/03/16 16:33:04 joel Exp $
+#
+#  COPYRIGHT (c) 2011.
+#  On-Line Applications Research Corporation (OAR).
+#
+#  The license and distribution terms for this file may be
+#  found in the file LICENSE in this distribution or at
+#  http://www.rtems.com/license/LICENSE.
+#
+
+This file describes the directives and concepts tested by this test set.
+
+test set name:  spsimplesched02
+
+directives:
+  + rtems_semaphore_create
+  + rtems_semaphore_obtain
+  + rtems_semaphore_release
+
+concepts:
+
++ The purpose of this test is to exercise paths in the Simple Scheduler.
+  It exercises logic required to inherit and restore priority.

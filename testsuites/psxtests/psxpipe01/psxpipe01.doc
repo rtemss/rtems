@@ -1,0 +1,24 @@
+#
+#  $Id: psxpipe01.doc,v 1.1 2010/07/09 22:07:11 joel Exp $
+#
+#  COPYRIGHT (c) 1989-2009.
+#  On-Line Applications Research Corporation (OAR).
+#
+#  The license and distribution terms for this file may be
+#  found in the file LICENSE in this distribution or at
+#  http://www.rtems.com/license/LICENSE.
+#
+
+This file describes the directives and concepts tested by this test set.
+
+test set name:  POSIX PIPE CREATION TEST
+
+directives:
+
++ pipe
++ pipe_create
+
+concepts:
+
++ Exercise the posix pipe creation routines, including the error paths
+

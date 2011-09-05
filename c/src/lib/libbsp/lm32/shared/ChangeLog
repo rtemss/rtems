@@ -1,0 +1,26 @@
+2011-08-02	Sebastien Bourdeauducq <sebastien.bourdeauducq@gmail.com>
+
+	PR 1869/bsps
+	* milkymist_networking/mm_crc32.c: Removed.
+
+2011-08-01	Sebastien Bourdeauducq <sebastien.bourdeauducq@gmail.com>
+
+	PR 1869/bsps
+	* startup/bspclean.c: New file.
+	* include/tm27.h: Removed.
+	* ChangeLog, Makefile.am, README, preinstall.am, include/bsp.h,
+	include/system_conf.h, make/custom/milkymist.cfg, startup/linkcmds:
+	Complete BSP for Milkymist One supporting Milkymist SOC 1.0.x.
+	Includes new or updated drivers for:
+	  - Multi-standard video input (PAL/SECAM/NTSC)
+	  - Two DMX512 (RS485) ports
+	  - MIDI IN and MIDI OUT ports
+	  - VGA output
+	  - AC'97 audio
+	  - NOR flash
+	  - 10/100 Ethernet
+	  - Memory card (experimental and incomplete)
+	  - USB host connectors (input devices only)
+	  - RC5 infrared receiver
+	  - RS232 debug port
+
